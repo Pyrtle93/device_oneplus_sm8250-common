@@ -55,6 +55,12 @@
         <activity android:name=".DeviceSettings" />
         <activity android:name=".KeyHandler" />
 
+        <activity
+            android:name="com.android.touch.gestures.TouchscreenGestureSettings"
+            android:label="@string/touchscreen_gesture_settings_title"
+            android:theme="@style/AppTheme">
+        </activity>
+
         <!-- DeviceSettings Tile -->
         <service
             android:name="org.derp.device.DeviceSettings.DeviceSettingsTileService"
