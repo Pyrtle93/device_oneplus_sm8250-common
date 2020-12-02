@@ -91,6 +91,10 @@
             </intent-filter>
         </service>
 
+        <!-- HBM Service -->
+        <service android:name="org.evolution.device.DeviceSettings.HBMModeService"
+            android:exported="false" />
+
         <!-- Auto HBM Service -->
         <service android:name="org.evolution.device.DeviceSettings.AutoHBMService" />
 
