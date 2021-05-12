@@ -16,12 +16,15 @@
     <!-- Display modes -->
     <string name="display_title">ডিসপ্লের বিভিন্ন মোড</string>
     <string name="display_summary">ডিসপ্লের সেটিংস এবং বিভিন্ন দিক নিয়ন্ত্রণ</string>
+    <string name="hbm_mode_summary"></string>
+    <string name="hbm_mode_title">সর্বোচ্চ উজ্জলতা</string>
     <string name="auto_hbm_summary"></string>
     <string name="auto_hbm_title">স্বয়ংক্রিয় সর্বোচ্চ উজ্জলতা</string>
     <string name="auto_hbm_threshold_title">কত সীমায় সর্বোচ্চ উজ্জ্বলতা স্বয়ংক্রিয়ভাবে চালু হবে (lux)</string>
     <string name="auto_hbm_threshold_summary"></string>
     <string name="dc_mode_summary"></string>
     <string name="dc_mode_title">ডিসি-ডিমিং (ডিসপ্লে তে আসা কারেন্ট নিয়ন্ত্রণ)</string>
+    <string name="tile_hbm_mode">সর্বোচ্চ উজ্জলতা মোড</string>
     <string name="tile_dc_mode">ডিসি-ডিমিং (ডিসপ্লে তে আসা কারেন্ট নিয়ন্ত্রণ)</string>
     <!-- Doze -->
     <string name="doze_panel_title">ডোজ</string>

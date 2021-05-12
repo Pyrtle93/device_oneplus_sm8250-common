@@ -16,12 +16,15 @@
     <!-- Display modes -->
     <string name="display_title">Modalità display</string>
     <string name="display_summary">Regola impostazioni e preferenze per il display</string>
+    <string name="hbm_mode_summary"></string>
+    <string name="hbm_mode_title">Modalità alta luminosità</string>
     <string name="auto_hbm_summary"></string>
     <string name="auto_hbm_title">Modalità alta luminosità automatica</string>
     <string name="auto_hbm_threshold_title">Soglia automatica modalità alta luminosità (lux)</string>
     <string name="auto_hbm_threshold_summary"></string>
     <string name="dc_mode_summary"></string>
     <string name="dc_mode_title">DC-Dimming</string>
+    <string name="tile_hbm_mode">Modalità alta luminosità</string>
     <string name="tile_dc_mode">DC-Dimming</string>
     <!-- Doze -->
     <string name="doze_panel_title">Doze</string>
