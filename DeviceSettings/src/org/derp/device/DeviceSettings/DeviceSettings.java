@@ -47,15 +47,29 @@ import androidx.preference.TwoStatePreference;
 
 import org.derp.device.DeviceSettings.FileUtils;
 import org.derp.device.DeviceSettings.preferences.ProperSeekBarPreference;
+import org.derp.device.DeviceSettings.preferences.VibratorStrengthPreference;
+import org.derp.device.DeviceSettings.preferences.VibratorNotifStrengthPreference;
+import org.derp.device.DeviceSettings.preferences.VibratorCallStrengthPreference;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
+    public static final String KEY_SRGB_SWITCH = "srgb";
     public static final String KEY_HBM_SWITCH = "hbm";
     public static final String KEY_AUTO_HBM_SWITCH = "auto_hbm";
     public static final String KEY_AUTO_HBM_THRESHOLD = "auto_hbm_threshold";
     public static final String KEY_DC_SWITCH = "dc";
+    public static final String KEY_DCI_SWITCH = "dci";
+    public static final String KEY_WIDE_SWITCH = "wide";
+
     public static final String KEY_FPS_INFO = "fps_info";
+
+    public static final String KEY_VIBSTRENGTH = "vib_strength";
+    private VibratorStrengthPreference mVibratorStrength;
+    public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
+    private VibratorCallStrengthPreference mVibratorCallStrength;
+    public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
+    private VibratorNotifStrengthPreference mVibratorNotifStrength;
 
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
@@ -80,6 +94,16 @@ public class DeviceSettings extends PreferenceFragment
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this.getContext());
+
+        mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
+        if (mVibratorStrength != null)
+            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
+        mVibratorCallStrength = (VibratorCallStrengthPreference) findPreference(KEY_CALL_VIBSTRENGTH);
+        if (mVibratorCallStrength != null)
+            mVibratorCallStrength.setEnabled(VibratorCallStrengthPreference.isSupported());
+        mVibratorNotifStrength = (VibratorNotifStrengthPreference) findPreference(KEY_NOTIF_VIBSTRENGTH);
+        if (mVibratorNotifStrength != null)
+            mVibratorNotifStrength.setEnabled(VibratorNotifStrengthPreference.isSupported());
 
         mTopKeyPref = (ListPreference) findPreference(Constants.NOTIF_SLIDER_TOP_KEY);
         mTopKeyPref.setValueIndex(Constants.getPreferenceInt(getContext(), Constants.NOTIF_SLIDER_TOP_KEY));
