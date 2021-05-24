@@ -32,7 +32,7 @@
         android:label="@string/device_title"
         android:theme="@style/AppTheme">
 
-        <!-- DeviceSettings Activity -->
+        <!-- Device Settings -->
         <activity
             android:name=".DeviceSettingsActivity"
             android:label="@string/device_title">
@@ -61,6 +61,23 @@
             android:theme="@style/AppTheme">
         </activity>
 
+        <activity
+            android:name="org.derp.device.DeviceSettings.PanelSettingsActivity"
+            android:exported="true"
+            android:label="@string/panel_category_title"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="org.derp.device.DeviceSettings.Startup" >
+            <intent-filter android:priority="100" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
         <!-- DeviceSettings Tile -->
         <service
             android:name="org.derp.device.DeviceSettings.DeviceSettingsTileService"
@@ -78,6 +95,12 @@
             android:name="org.derp.device.DeviceSettings.LogTile"
             android:icon="@drawable/ic_qs_log"
             android:label="@string/quick_settings_log_tile_label"
+
+        <!-- Panel Mode's Tile -->
+        <service
+            android:name="org.derp.device.DeviceSettings.PanelModeTileService"
+            android:icon="@drawable/ic_panel_tile"
+            android:label="@string/tile_panel_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action
@@ -88,14 +111,6 @@
         <!-- HBM Tile -->
         <service
             android:name="org.derp.device.DeviceSettings.HBMModeTileService"
-            android:icon="@drawable/ic_hbm_tile"
-            android:label="@string/tile_hbm_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
 
         <!-- HBM Service -->
         <service android:name="org.derp.device.DeviceSettings.HBMModeService"
@@ -130,8 +145,6 @@
 
         <!-- FPS Info Service -->
         <service android:name="org.derp.device.DeviceSettings.FPSInfoService"
-                android:exported="false">
-        </service>
 
         <!-- Search Provider -->
         <provider
