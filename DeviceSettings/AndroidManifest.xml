@@ -94,7 +94,7 @@
         <service
             android:name="org.derp.device.DeviceSettings.LogTile"
             android:icon="@drawable/ic_qs_log"
-            android:label="@string/quick_settings_log_tile_label"
+            android:label="@string/quick_settings_log_tile_label"/>
 
         <!-- Panel Mode's Tile -->
         <service
